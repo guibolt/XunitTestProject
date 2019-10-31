@@ -1,5 +1,6 @@
 ﻿using System;
 using Alura.LeilaoOnline.Core;
+using Alura.LeilaoOnline.Tests;
 
 namespace Alura.LeilaoOnline.ConsoleApp
 {
@@ -24,8 +25,9 @@ namespace Alura.LeilaoOnline.ConsoleApp
 
         private static void LeilaoComVariosLances()
         {
+            IModalidadeAvaliacao modalidade = new MaiorValor();
             //Arranje - cenário
-            var leilao = new Leilao("Van Gogh");
+            var leilao = new Leilao("Van Gogh", modalidade);
             var fulano = new Interessada("Fulano", leilao);
             var maria = new Interessada("Maria", leilao);
 
@@ -46,8 +48,9 @@ namespace Alura.LeilaoOnline.ConsoleApp
 
         private static void LeilaoComApenasUmLance()
         {
+            IModalidadeAvaliacao modalidade = new MaiorValor();
             //Arranje - cenário
-            var leilao = new Leilao("Van Gogh");
+            var leilao = new Leilao("Van Gogh",modalidade);
             var fulano = new Interessada("Fulano", leilao);
 
             leilao.RecebeLance(fulano, 800);
